@@ -27,12 +27,18 @@ namespace ProjectManagementApp
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(e => e.LastEditedDate).HasDefaultValueSql("now()");
             });
 
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Username).IsRequired();
+                entity.HasIndex(e => e.Username).IsUnique();
+                entity.HasIndex(e => e.Email).IsUnique();
+                entity.Property(e => e.CreatedDate).HasDefaultValueSql("now()");
+                entity.Property(e => e.LastEditedDate).HasDefaultValueSql("now()");
                 entity.HasOne(d => d.Account);
             });
         }
