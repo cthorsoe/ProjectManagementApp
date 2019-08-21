@@ -25,14 +25,6 @@ namespace ProjectManagementApp
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddDbContext<DatabaseContext>(
-            //    options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), 
-            //        mySqlOptions =>
-            //        {
-            //            mySqlOptions.ServerVersion(new Version(10, 1, 38), ServerType.MariaDb); // replace with your Server Version and Type
-            //        }
-            //));
-
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

@@ -22,7 +22,6 @@ export class Users extends Component {
                         <th>Id</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Account</th>
                         <th>Created</th>
                     </tr>
                 </thead>
@@ -32,8 +31,7 @@ export class Users extends Component {
                             <td>{user.id}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>
-                            <td>{user.accountId}</td>
-                            <td>{user.createdDate}</td>
+                            <td>{user.created}</td>
                         </tr>
                     )}
                 </tbody>

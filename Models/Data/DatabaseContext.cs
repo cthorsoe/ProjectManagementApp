@@ -2,7 +2,7 @@
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using ProjectManagementApp.Models;
 
-namespace ProjectManagementApp
+namespace ProjectManagementApp.Models.Data
 {
     public class DatabaseContext :  DbContext
     {
