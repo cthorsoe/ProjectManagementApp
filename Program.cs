@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using ProjectManagementApp.Models;
@@ -44,8 +45,8 @@ namespace ProjectManagementApp
                     {
                         Id = Guid.NewGuid(),
                         Username = "testuser1",
-                        Hash = user1PwData.Hash,
-                        Salt = user1PwData.Salt,
+                        PasswordHash = user1PwData.Hash,
+                        PasswordSalt = user1PwData.Salt,
                         Email = "testuser1@testmail.com",
                         Account = account
                     });
@@ -55,14 +56,15 @@ namespace ProjectManagementApp
                     {
                         Id = Guid.NewGuid(),
                         Username = "testuser2",
-                        Hash = user2PwData.Hash,
-                        Salt = user2PwData.Salt,
+                        PasswordHash = user2PwData.Hash,
+                        PasswordSalt = user2PwData.Salt,
                         Email = "testuser2@testmail.com",
                         Account = account
                     });
                 }
                 // Saves changes
                 context.SaveChanges();
+
             }
         }
 

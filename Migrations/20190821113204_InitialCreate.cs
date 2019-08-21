@@ -11,7 +11,7 @@ namespace ProjectManagementApp.Migrations
                 name: "Account",
                 columns: table => new
                 {
-                    Id = table.Column<byte[]>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "now()"),
                     LastEditedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "now()")
@@ -25,14 +25,14 @@ namespace ProjectManagementApp.Migrations
                 name: "User",
                 columns: table => new
                 {
-                    Id = table.Column<byte[]>(nullable: false),
+                    Id = table.Column<Guid>(nullable: false),
                     Username = table.Column<string>(nullable: false),
                     Hash = table.Column<string>(nullable: true),
                     Salt = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
                     CreatedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "now()"),
                     LastEditedDate = table.Column<DateTime>(nullable: false, defaultValueSql: "now()"),
-                    AccountId = table.Column<byte[]>(nullable: false)
+                    AccountId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,14 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Web.Http;
-using System.Net.Http;
-using System.Web.Http.Routing;
+using Microsoft.EntityFrameworkCore;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using System;
 
 namespace ProjectManagementApp
 {
@@ -25,6 +24,14 @@ namespace ProjectManagementApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //services.AddDbContext<DatabaseContext>(
+            //    options => options.UseMySql(Configuration.GetConnectionString("DefaultConnection"), 
+            //        mySqlOptions =>
+            //        {
+            //            mySqlOptions.ServerVersion(new Version(10, 1, 38), ServerType.MariaDb); // replace with your Server Version and Type
+            //        }
+            //));
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

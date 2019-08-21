@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MySql.Data.EntityFrameworkCore.Extensions;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using ProjectManagementApp.Models;
 
 namespace ProjectManagementApp
@@ -15,7 +15,7 @@ namespace ProjectManagementApp
 #if RELEASE
             optionsBuilder.UseMySQL("server=127.0.0.1;port=3306;database=PmaDb;uid=root;password=dbpassword");
 #else
-            optionsBuilder.UseMySQL("server=127.0.0.1;port=3306;database=PmaDb;uid=root;password=");
+            optionsBuilder.UseMySql("server=127.0.0.1;port=3306;database=PmaDb;uid=root;password=");
 #endif
         }
 

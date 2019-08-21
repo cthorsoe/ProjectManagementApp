@@ -9,8 +9,8 @@ namespace ProjectManagementApp.Models
     {
         public Guid Id { get; set; }
         public string Username { get; set; }
-        public string Hash { get; set; }
-        public string Salt { get; set; } 
+        public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; } 
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime LastEditedDate { get; set; }
